@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+    "paths": {
+      "@modules/*": [
+        "./src/modules/*"
+      ],
+      "@config/*": [
+        "./src/config/*"
+      ]
+    },
+    "allowJs": true,
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
