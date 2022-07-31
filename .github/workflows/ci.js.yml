@@ -19,5 +19,14 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Up project
+      run: docker-compose up
+
     - name: Run tests
-      run: docker-compose up -d && npm run test
+      run: docker exec node npm run test
+      env:
+        DATABASE_HOST: ${{ env.DATABASE_HOST }}
+        DATABASE_PORT: ${{ env.DATABASE_PORT }}
+        POSTGRESQL_USER: ${{ env.POSTGRESQL_USER }}
+        POSTGRESQL_PASSWORD: ${{ env.POSTGRESQL_PASSWORD }}
+        POSTGRESQL_DB: ${{ env.POSTGRESQL_DB }}
