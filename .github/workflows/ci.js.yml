@@ -20,13 +20,13 @@ jobs:
       run: npm install
 
     - name: Up project
-      run: docker-compose up
+      run: docker-compose up -d
 
     - name: Run tests
-      run: docker exec node npm run test
+      run: npm run test
       env:
-        DATABASE_HOST: ${{ env.DATABASE_HOST }}
-        DATABASE_PORT: ${{ env.DATABASE_PORT }}
-        POSTGRESQL_USER: ${{ env.POSTGRESQL_USER }}
-        POSTGRESQL_PASSWORD: ${{ env.POSTGRESQL_PASSWORD }}
-        POSTGRESQL_DB: ${{ env.POSTGRESQL_DB }}
+        DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+        DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
+        POSTGRESQL_USER: ${{ secrets.POSTGRESQL_USER }}
+        POSTGRESQL_PASSWORD: ${{ secrets.POSTGRESQL_PASSWORD }}
+        POSTGRESQL_DB: ${{ secrets.POSTGRESQL_DB }}
