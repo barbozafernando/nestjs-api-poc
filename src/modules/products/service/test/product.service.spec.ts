@@ -22,9 +22,6 @@ describe('ProductService', () => {
     jest.resetAllMocks();
   });
 
-  beforeAll(async () => await dataSource.initialize());
-  afterAll(async () => await dataSource.destroy());
-
   it('should be defined', () => {
     expect(productService).toBeDefined();
   });

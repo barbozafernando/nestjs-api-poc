@@ -9,11 +9,12 @@ require('dotenv').config();
 
 const options: PostgresConnectionOptions = {
   type: 'postgres',
-  host: process.env.DATABASE_HOST || 'localhost',
+  host: process.env.DATABASE_HOST || 'postgres',
   port: Number(process.env.DATABASE_PORT) || 5432,
   username: process.env.POSTGRESQL_USER || 'postgres',
-  password: process.env.POSTGRESQL_PASSWORD || '',
-  database: process.env.POSTGRESQL_DATABASE || '',
+  password: process.env.POSTGRESQL_PASSWORD || 'postgres',
+  database: process.env.POSTGRESQL_DATABASE || 'postgres',
+  synchronize: true,
   entities: [
     `${SOURCE_PATH}/**/*.entity.{js,ts}`,
     'dist/modules/**/entities/**/*.entity.{js,ts}',
@@ -22,7 +23,6 @@ const options: PostgresConnectionOptions = {
     `dist/modules/**/database/migrations/*.js`,
     'src/modules/database/migrations',
   ],
-  synchronize: true,
 };
 
 const dataSource = new DataSource(options);
