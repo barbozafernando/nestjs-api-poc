@@ -19,10 +19,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Up project
-      run: docker-compose up -d
-
     - name: Run tests
+      run: npm run build --if-present
       run: npm run test
       env:
         DATABASE_HOST: ${{ secrets.DATABASE_HOST }}

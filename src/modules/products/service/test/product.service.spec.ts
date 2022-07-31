@@ -4,7 +4,6 @@ import { ProductService } from '../../service/product.service';
 import { createMock } from '@golevelup/ts-jest';
 import { ProductsDTO } from '../../dto/create-products.dto';
 import { Products } from '../../entity/product.entity';
-import dataSource from '../../../../config/postgres-data-source';
 
 describe('ProductService', () => {
   let productService: ProductService;
