@@ -23,9 +23,3 @@ jobs:
       run: |
         npm run build --if-present &&
         npm run test
-      env:
-        DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
-        DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
-        POSTGRESQL_USER: ${{ secrets.POSTGRESQL_USER }}
-        POSTGRESQL_PASSWORD: ${{ secrets.POSTGRESQL_PASSWORD }}
-        POSTGRESQL_DB: ${{ secrets.POSTGRESQL_DB }}
