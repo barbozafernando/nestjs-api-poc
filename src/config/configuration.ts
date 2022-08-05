@@ -5,7 +5,7 @@ const SOURCE_PATH = resolve(__dirname, '..', '.');
 
 export default () => ({
   database: {
-    host: process.env.DATABASE_HOST || 'localhost',
+    host: process.env.DATABASE_HOST || 'postgres',
     port: Number(process.env.DATABASE_PORT) || 5432,
     username: process.env.POSTGRESQL_USER || 'postgres',
     password: process.env.POSTGRESQL_PASSWORD || 'postgres',
