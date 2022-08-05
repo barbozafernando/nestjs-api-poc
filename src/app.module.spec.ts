@@ -2,6 +2,8 @@ import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppModule } from './app.module';
 
+jest.setTimeout(20000);
+
 describe('AppModule', () => {
   let app: INestApplication;
 
