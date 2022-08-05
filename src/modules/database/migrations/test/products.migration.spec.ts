@@ -33,8 +33,6 @@ describe('Products Migration', () => {
     await migration.up(queryRunner);
     let info = await dataSourceConnection.query(queryInfo);
 
-    console.log(info);
-
     expect(info).toHaveLength(6);
 
     expect(info[0]['name']).toBe('id');

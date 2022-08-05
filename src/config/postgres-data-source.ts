@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { DataSource } from 'typeorm';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 import { resolve } from 'path';

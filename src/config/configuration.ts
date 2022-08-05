@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { resolve } from 'path';
 
 const SOURCE_PATH = resolve(__dirname, '..', '.');
